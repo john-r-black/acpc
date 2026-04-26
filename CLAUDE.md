@@ -161,11 +161,14 @@ All door IDs are confirmed from UniFi Access. Do not use door names for API call
 | Front Interior | 9f00ec14-0722-438d-b4a6-369377e45466 | Interior | Yes (when no MWS) | Yes | No |
 | FP Interior | cefccd2e-bdfa-4a21-86e3-6c8ab17bae3b | Interior | Yes (when no MWS) | Yes | No |
 | MWS Interior | ec2ccc5f-46d0-409e-9478-009c91a47b33 | Interior | Yes (when no MWS) | Yes | No |
+| MWS Front | 23adbe59-b0a6-4f48-8e4f-cf150bb7389f | Exterior | Never — staff only | Yes | No |
 | FLC Gym | 45764eb5-54fc-4a6c-97fb-7ccde66ef5e9 | FLC Entry | Yes (F101, F102, F104) | Yes | Yes |
 | FLC Back | 068fe2dd-0e8a-46c7-aee2-e941729c2a1a | Sidewalk | Weekly schedule only | Yes | Yes |
-| Concourse | 3709510c-c196-4c3a-ad07-3329e6cedb87 | Sidewalk | Weekly schedule only | No | No |
+| Concourse | 3709510c-c196-4c3a-ad07-3329e6cedb87 | Sidewalk | Weekly schedule only | Yes | Yes |
 | MWS Back | 1ca88a37-bd84-4173-bd0c-3b7970edcd0a | Exterior | Never — staff only | Yes | No |
 | FLC Closets | be673221-46ef-42fb-a182-0b9724522b35 | Interior | Never — staff only | No | No |
+
+**Partner doors:** Concourse and FLC Back lock and unlock together — always. Their `mws_lockout` and `crossover_lockout` flags must stay identical. Encoded via `partner_of:` fields in `mapping.yaml` and enforced by `tests/test_doors_unifi.py`.
 
 ### PCO Room → Door(s) Mapping
 
@@ -206,14 +209,18 @@ def door_engine_poll(events, current_time):
 
     MWS_PROTECTED = [
         "ec2ccc5f-46d0-409e-9478-009c91a47b33",  # MWS Interior
+        "23adbe59-b0a6-4f48-8e4f-cf150bb7389f",  # MWS Front
         "9f00ec14-0722-438d-b4a6-369377e45466",  # Front Interior
         "cefccd2e-bdfa-4a21-86e3-6c8ab17bae3b",  # FP Interior
         "45764eb5-54fc-4a6c-97fb-7ccde66ef5e9",  # FLC Gym
         "068fe2dd-0e8a-46c7-aee2-e941729c2a1a",  # FLC Back
+        "3709510c-c196-4c3a-ad07-3329e6cedb87",  # Concourse (partner of FLC Back)
+        "1ca88a37-bd84-4173-bd0c-3b7970edcd0a",  # MWS Back
     ]
     CROSSOVER_PROTECTED = [
         "45764eb5-54fc-4a6c-97fb-7ccde66ef5e9",  # FLC Gym
         "068fe2dd-0e8a-46c7-aee2-e941729c2a1a",  # FLC Back
+        "3709510c-c196-4c3a-ad07-3329e6cedb87",  # Concourse (partner of FLC Back)
     ]
 
     locked_doors = set()

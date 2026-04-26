@@ -1,0 +1,222 @@
+zones:
+  admin:
+    tcc_name: Admin
+    mac_id: 48A2E62818B8
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  choir:
+    tcc_name: Choir
+    mac_id: 48A2E62332A9
+    cool_occupied: 69
+    cool_unoccupied: 80
+    heat_occupied: 65
+    heat_unoccupied: 55
+  concourse_e:
+    tcc_name: Concourse-E
+    mac_id: B82CA0A17EFD
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  concourse_w:
+    tcc_name: Concourse-W
+    mac_id: 48A2E62332AE
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  east_wing:
+    tcc_name: East Wing
+    mac_id: 48A2E6A26C23
+    cool_occupied: 73
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  sanctuary_e:
+    tcc_name: Sanctuary-E
+    mac_id: 48A2E62332B0
+    cool_occupied: 71
+    cool_unoccupied: 78
+    heat_occupied: 67
+    heat_unoccupied: 55
+  sanctuary_w:
+    tcc_name: Sanctuary-W
+    mac_id: 48A2E60F63B4
+    cool_occupied: 71
+    cool_unoccupied: 78
+    heat_occupied: 67
+    heat_unoccupied: 55
+  mws_n:
+    tcc_name: MWS-N
+    mac_id: 48A2E62332AB
+    cool_occupied: 70
+    cool_unoccupied: 80
+    heat_occupied: 65
+    heat_unoccupied: 55
+  mws_s:
+    tcc_name: MWS-S
+    mac_id: 48A2E6233273
+    cool_occupied: 70
+    cool_unoccupied: 80
+    heat_occupied: 65
+    heat_unoccupied: 55
+  flc_up:
+    tcc_name: FLC-Up
+    mac_id: 48A2E6182D28
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  flc_down:
+    tcc_name: FLC-Down
+    mac_id: 48A2E6182D3A
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  gym_e:
+    tcc_name: Gym-E
+    mac_id: 48A2E6182D3E
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+  gym_w:
+    tcc_name: Gym-W
+    mac_id: 48A2E62817B0
+    cool_occupied: 72
+    cool_unoccupied: 80
+    heat_occupied: 67
+    heat_unoccupied: 55
+
+doors:
+  front_exterior:
+    name: Front Exterior
+    unifi_id: aa3b4674-26e4-4e13-b2de-c01b574d3955
+    type: exterior
+    event_triggered: true
+    mws_lockout: false
+    crossover_lockout: false
+  east_door:
+    name: East Door
+    unifi_id: a1dda2ce-ebc0-410c-8683-d4f0a8343752
+    type: exterior
+    event_triggered: true
+    mws_lockout: false
+    crossover_lockout: false
+  fp_exterior:
+    name: FP Exterior
+    unifi_id: 651f1d1f-a450-499d-8b87-2c754e128dce
+    type: exterior
+    event_triggered: true
+    mws_lockout: false
+    crossover_lockout: false
+  front_interior:
+    name: Front Interior
+    unifi_id: 9f00ec14-0722-438d-b4a6-369377e45466
+    type: interior
+    event_triggered: true
+    mws_lockout: true
+    crossover_lockout: false
+  fp_interior:
+    name: FP Interior
+    unifi_id: cefccd2e-bdfa-4a21-86e3-6c8ab17bae3b
+    type: interior
+    event_triggered: true
+    mws_lockout: true
+    crossover_lockout: false
+  mws_interior:
+    name: MWS Interior
+    unifi_id: ec2ccc5f-46d0-409e-9478-009c91a47b33
+    type: interior
+    event_triggered: true
+    mws_lockout: true
+    crossover_lockout: false
+  mws_front:
+    name: MWS Front
+    unifi_id: 23adbe59-b0a6-4f48-8e4f-cf150bb7389f
+    type: exterior
+    event_triggered: false
+    mws_lockout: true
+    crossover_lockout: false
+  flc_gym:
+    name: FLC Gym
+    unifi_id: 45764eb5-54fc-4a6c-97fb-7ccde66ef5e9
+    type: flc_entry
+    event_triggered: true
+    mws_lockout: true
+    crossover_lockout: true
+  flc_back:
+    name: FLC Back
+    unifi_id: 068fe2dd-0e8a-46c7-aee2-e941729c2a1a
+    type: sidewalk
+    event_triggered: false
+    mws_lockout: true
+    crossover_lockout: true
+    partner_of: concourse
+  concourse:
+    name: Concourse
+    unifi_id: 3709510c-c196-4c3a-ad07-3329e6cedb87
+    type: sidewalk
+    event_triggered: false
+    mws_lockout: true
+    crossover_lockout: true
+    partner_of: flc_back
+  mws_back:
+    name: MWS Back
+    unifi_id: 1ca88a37-bd84-4173-bd0c-3b7970edcd0a
+    type: exterior
+    event_triggered: false
+    mws_lockout: true
+    crossover_lockout: false
+  flc_closets:
+    name: FLC Closets
+    unifi_id: be673221-46ef-42fb-a182-0b9724522b35
+    type: interior
+    event_triggered: false
+    mws_lockout: false
+    crossover_lockout: false
+
+pco_room_to_zones:
+  "Offices - 100-105": [admin]
+  "Choir - 112-113": [choir]
+  "111": [choir]
+  "Chapel - 110": [concourse_e]
+  "118-119 - East Concourse": [concourse_e]
+  "120 - Concourse": [concourse_e, concourse_w]
+  "121-122 - West Concourse": [concourse_w]
+  "106+108": [east_wing]
+  "Food Pantry - 107": [east_wing]
+  "114": [sanctuary_e]
+  "115": [sanctuary_e]
+  "Sanctuary": [sanctuary_e, sanctuary_w]
+  "Library - 116": [sanctuary_w]
+  "Cry Room - 117": [sanctuary_w]
+  "Kitchen - 123": [mws_n]
+  "Children's Wing - 124-128": [mws_n]
+  "MWS - 129-137": [mws_s]
+  "F-Upstairs": [flc_up]
+  "Youth Room - F101": [flc_down]
+  "Kitchen - F102": [flc_down]
+  "Gym - F104": [gym_e, gym_w]
+
+pco_room_to_doors:
+  "Food Pantry - 107": [fp_exterior]
+  "106+108": [east_door]
+  "Choir - 112-113": [east_door]
+  "Chapel - 110": [east_door]
+  "111": [east_door]
+  "114": [east_door]
+  "115": [east_door]
+  "118-119 - East Concourse": [east_door]
+  "120 - Concourse": [east_door, front_exterior]
+  "121-122 - West Concourse": [front_exterior]
+  "Library - 116": [front_exterior]
+  "Sanctuary": [east_door, front_exterior]
+  "Kitchen - 123": [front_exterior]
+  "Offices - 100-105": [front_exterior]
+  "Youth Room - F101": [flc_gym]
+  "Kitchen - F102": [flc_gym]
+  "Gym - F104": [flc_gym]

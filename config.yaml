@@ -1,0 +1,26 @@
+shadow_mode: true
+adaptive_prestart: false
+default_precool_minutes: 30
+door_buffer_before_minutes: 15
+door_buffer_after_minutes: 15
+
+email:
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  from_address: system@dpumc.org
+  admin: admin@dpumc.org
+  trustee_chair: trustee@dpumc.org
+
+weather:
+  latitude: 29.7030
+  longitude: -95.1244
+
+pco:
+  mws_event_patterns:
+    - MWS
+    - Midweek Studies
+  crossover_event_patterns:
+    - CrossOver
+    - Cross Over
+  fetch_window_hours_ahead: 24
+  fetch_window_hours_behind: 2
